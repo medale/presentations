@@ -22,23 +22,35 @@ Amazon has figured out how to make cloud pay
 
 ![11+1 @amazon_regions_global_2015](graphics/AwsRegions-2015-11-03.png)
 
+# A Simple Web Application
+
+![Server/Database](graphics/WebApp1-Start.png) \
+
+
+# Scaling Up - Getting Beefy
+
+![Scaling Up](graphics/WebApp2-ScaleUp.png) \
+
+
+# Content Delivery Network & Analytics
+
+![Content Delivery Network/Analytics](graphics/WebApp3-Content.png) \
+
+
+# Amazon Elastic Compute Cloud (EC2)
+
+![EC2](graphics/WebApp4-EC2.png) \
+
+
+# Amazon RDS, DynamoDB, ElastiCache
+
+![RDS/DynamoDB/ElastiCache](graphics/WebApp5-RDS.png) \
+
+
+
 # 52 AWS Services:
 
 ![AWS Services](graphics/AwsServices-2015-11-03.png) \
 
-
-# Others
-
-Analytics-2015-11-03.png
-AppsServices-2015-11-03.png
-ComputeServices-2015-11-03.png
-Database-2015-11-03.png
-DevTools-2015-11-03.png
-EnterpriseApps-2015-11-03.png
-IoTMobile-2015-11-03.png
-ManagementTools-2015-11-03.png
-Networking-2015-11-03.png
-SecurityIdentity-2015-11-03.png
-StorageContentDelivery-2015-11-03.png
 
 # References {.allowframebreaks}

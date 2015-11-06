@@ -14,17 +14,22 @@ Amazon has figured out how to make cloud pay
 
 [@finley_amazon_2015]
 
-# AWS According to AWS
+# AWS
+* Started in 2006
+* 2015: Over a Million Active Customers in 190 Countries
 
-* Over a Million Active Customers in 190 Countries
+# Gartner: Infrastructure As A Service Magic Quadrant
+
+![IaaS Magic Quadrant @leong_gartner_2015](graphics/GartnerIaaSMagicQuadrant.png)
+
 
 # AWS Regions and Edge Points of Presence
 
 ![11+1 @amazon_regions_global_2015](graphics/AwsRegions-2015-11-03.png)
 
-# A Simple Web Application
+# Multiplayer Mobile Game Application
 
-![Server/Database](graphics/WebApp1-Start.png) \
+![Mobile Game/Server/Database](graphics/WebApp1-Start.png) \
 
 
 # Scaling Up - Getting Beefy
@@ -47,10 +52,79 @@ Amazon has figured out how to make cloud pay
 ![RDS/DynamoDB/ElastiCache](graphics/WebApp5-RDS.png) \
 
 
+# Amazon CloudFront CDN, S3
+
+![CloudFront/S3](graphics/WebApp6-S3.png) \
+
+
+# Amazon Scalable Analytics - Batch, Streaming, Datawarehouse
+
+![EMR/Kinesis Streaming, Redshift](graphics/WebApp7-Analytics.png) \
+
+
+# Security At Every Layer
+
+![IAM/WAF/CloudTrail](graphics/WebApp8-Security.png) \
+
+
+# Compute As A Service
+
+![ElasticBeanstalk/Lambda](graphics/WebApp9-Lambda.png) \
+
+
+# Infrastructure As Code - RESTful via AWS CLI
+```
+aws emr create-cluster
+--ec2-attributes SubnetId=subnet-xxxxx \
+--release-label emr-4.0.0 \
+--instance-groups InstanceGroupType=MASTER,\
+InstanceCount=1,InstanceType=m3.xlarge \
+InstanceGroupType=CORE,\
+InstanceCount=2,InstanceType=m3.xlarge \
+--auto-terminate
+```
+
+# Infrastructure As Code - RESTful via AWS SDKs
+
+![SDKs](graphics/AwsSdks.png)  \  
+
+
+
+# Infrastructure As Code - CloudFormation JSON
+```
+...
+"WebServerSecurityGroup": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Enable HTTP access via port 80
+        locked down to the load balancer + SSH access",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "80",
+            "ToPort": "80",
+            "SourceSecurityGroupOwnerId": {
+              "Fn::GetAtt": [
+                "ElasticLoadBalancer",
+                "SourceSecurityGroup.OwnerAlias"
+              ]
+...
+```
 
 # 52 AWS Services:
 
 ![AWS Services](graphics/AwsServices-2015-11-03.png) \
 
+
+# Re:Invent 2015
+
+* 2013: 8,000
+* 2014: 13,000 attendees
+* 2015: Over 20,000 attendees (TechRepublic)
+* Capital One and GE as part of key note
+
+# Links
+
+https://aws.amazon.com/architecture/icons/
 
 # References {.allowframebreaks}

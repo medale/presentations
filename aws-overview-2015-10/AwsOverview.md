@@ -2,6 +2,10 @@
 % Markus Dale
 % November 2015
 
+# AWS
+* Started in 2006
+* 2015: Over a Million Active Customers in 190 Countries
+
 # Amazon Web Services (AWS) In the News
 
 Wired Magazine July 2015
@@ -13,10 +17,6 @@ Amazon has figured out how to make cloud pay
 > 81 percent bump in revenue.
 
 [@finley_amazon_2015]
-
-# AWS
-* Started in 2006
-* 2015: Over a Million Active Customers in 190 Countries
 
 # Gartner: Infrastructure As A Service Magic Quadrant
 
@@ -241,6 +241,10 @@ InstanceCount=2,InstanceType=m3.xlarge \
 * 12 month free tier: https://aws.amazon.com/free/
 * Re:Invent Videos: https://www.youtube.com/user/AmazonWebServices
 * Books: For example Amazon Web Services in Action, Manning, Sept 2015
+
+# End Firehose
+
+Questions? Comments?
 
 # Picture References
 

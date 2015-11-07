@@ -1,3 +1,7 @@
+# Intro
+* Markus - first used AWS for Data Science MOOC in 2013 (EMR)
+* Several AWS classes later...
+
 Lambda
 Simian army
 Evolutionary architectures

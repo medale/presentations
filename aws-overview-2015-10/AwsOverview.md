@@ -76,6 +76,12 @@ Amazon has figured out how to make cloud pay
 
 ![AWS Services](graphics/AwsServices-2015-11-03.png) \
 
+# EC2 Instances
+* On Demand
+* Reserved
+* Spot Instances
+
+# EC2 Instances - Reserved
 
 # Infrastructure As Code - RESTful via Management Console
 
@@ -185,7 +191,7 @@ InstanceCount=2,InstanceType=m3.xlarge \
 			<artifactId>aws-java-sdk</artifactId>
 			<version>1.10.32</version>
 		</dependency>
-    
+
 		<!-- Or API by API:
 		<dependency>
 	      <groupId>com.amazonaws</groupId>
@@ -196,12 +202,49 @@ InstanceCount=2,InstanceType=m3.xlarge \
 		 -->
 	</dependencies>
 ```
-# Links
 
-* https://aws.amazon.com/architecture/icons/
+# AWS Java S3 SDK
+```
+//See S3Uploader
+
+		String key = args[0];
+		String fileName = args[1];
+		AmazonS3 s3Client = new AmazonS3Client(new
+      ProfileCredentialsProvider());
+		try {
+			File file = new File(fileName);
+			s3Client.putObject(new PutObjectRequest(
+        SLPR_CELL_BUCKET, key, file));
+		} catch (AmazonServiceException serviceEx) {
+			System.out.println(serviceEx);
+		} catch (AmazonClientException clientEx) {
+			System.out.println(clientEx);
+		}
+```
+
+# AWS S3 Management Console
+![AWS S3 Management Console](graphics/Code-S3Bucket.png) \
+
+
+# AWS Java SDK Links
+* http://aws.amazon.com/documentation/sdk-for-java/
+    * Java SDK Developer Guide
+    * Java SDK API Javadocs
+    * Tips and Tricks (e.g. how to connect via proxy)
+
+# AWS Learning References
+* https://aws.amazon.com/training/
+    * Free intro labs
+    * Training Course
+    * Qwiklab online courses
+    * Certifications
+* 12 month free tier: https://aws.amazon.com/free/
+* Re:Invent Videos: https://www.youtube.com/user/AmazonWebServices
+* Books: For example Amazon Web Services in Action, Manning, Sept 2015
 
 # Picture References
-* https://aws.amazon.com/blogs/aws/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/
 
+* https://aws.amazon.com/architecture/icons/
+* https://aws.amazon.com/blogs/aws/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/
 
 # References {.allowframebreaks}

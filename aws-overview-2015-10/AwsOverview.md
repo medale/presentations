@@ -143,6 +143,31 @@ InstanceCount=2,InstanceType=m3.xlarge \
 ![AWS QuickSight](graphics/ReInvent-QuickSight.png) \
 
 
+# Re:Invent 2015: Amazon Kinesis Firehose
+
+* Write Kinesis stream to S3 or Redshift (structured data)
+* Configure buffer size, compression, encryption
+
+# Re:Invent 2015: AWS Import/Export Snowball
+
+![AWS Snowball](graphics/ReInvent-Snowball.png) \
+
+
+# Re:Invent 2015: Security
+
+* Amazon Inspector
+* AWS WAF
+* AWS Config Rules
+
+# Re:Invent 2015: Other Services
+
+* Amazon Elasticsearch Service
+* Amazon Kinesis Streams Extended Retention
+* AWS Database Migration Service (Preview)
+* Amazon RDS for MariaDB
+* AWS Lambda
+    * Python, Versioning, Scheduled Jobs, and 5 Minute Functions
+
 # Links
 
 * https://aws.amazon.com/architecture/icons/

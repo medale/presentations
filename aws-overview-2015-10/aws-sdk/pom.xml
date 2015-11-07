@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.uebercomputing.aws</groupId>
+	<artifactId>aws-jdk-demo</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<dependencies>
+	    <!-- Contains all APIs -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.10.32</version>
+		</dependency>
+		<!-- Or API by API:
+		<dependency>
+	      <groupId>com.amazonaws</groupId>
+	      <artifactId>aws-java-sdk-s3</artifactId>
+	      <version>1.10.32</version>
+        </dependency>
+		...
+		 -->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.4.2</version>
+				<executions>
+					<execution>
+						<id>shade</id>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<shadedArtifactAttached>true</shadedArtifactAttached>
+					<!-- <transformers> <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"> 
+						<mainClass>com.uebercomputing...</mainClass> </transformer> </transformers> -->
+					<!-- http://stackoverflow.com/questions/8302022/maven-shade-jar-throw-exception -->
+					<filters>
+						<filter>
+							<!-- Avoid security exception for signed jars -->
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/*.SF</exclude>
+								<exclude>META-INF/*.RSA</exclude>
+								<exclude>META-INF/*.INF</exclude>
+							</excludes>
+						</filter>
+					</filters>
+					<transformers>
+						<transformer
+							implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+							<resource>reference.conf</resource>
+						</transformer>
+					</transformers>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

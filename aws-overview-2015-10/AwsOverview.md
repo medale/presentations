@@ -165,9 +165,37 @@ InstanceCount=2,InstanceType=m3.xlarge \
 * Amazon Kinesis Streams Extended Retention
 * AWS Database Migration Service (Preview)
 * Amazon RDS for MariaDB
+* Amazon Cloudwatch Dashboards
 * AWS Lambda
     * Python, Versioning, Scheduled Jobs, and 5 Minute Functions
 
+# AWS SDKs - Credentials
+
+* Environment Variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+* Java System Properties: aws.accessKeyId, aws.secretKey
+* Default credentials: ~/.aws/credentials
+* Instance credentials (e.g. IAM role assigned to EC2 instance)
+
+# AWS Java SDK - Maven
+```
+	<dependencies>
+	    <!-- Contains all APIs -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>1.10.32</version>
+		</dependency>
+    
+		<!-- Or API by API:
+		<dependency>
+	      <groupId>com.amazonaws</groupId>
+	      <artifactId>aws-java-sdk-s3</artifactId>
+	      <version>1.10.32</version>
+        </dependency>
+		...
+		 -->
+	</dependencies>
+```
 # Links
 
 * https://aws.amazon.com/architecture/icons/

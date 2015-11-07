@@ -72,6 +72,16 @@ Amazon has figured out how to make cloud pay
 ![ElasticBeanstalk/Lambda](graphics/WebApp9-Lambda.png) \
 
 
+# 52 AWS Services:
+
+![AWS Services](graphics/AwsServices-2015-11-03.png) \
+
+
+# Infrastructure As Code - RESTful via Management Console
+
+![AWS Management Console - EC2](graphics/AwsManagementConsoleEc2.png) \
+
+
 # Infrastructure As Code - RESTful via AWS CLI
 ```
 aws emr create-cluster
@@ -111,9 +121,9 @@ InstanceCount=2,InstanceType=m3.xlarge \
 ...
 ```
 
-# 52 AWS Services:
+# AWS Marketplace
 
-![AWS Services](graphics/AwsServices-2015-11-03.png) \
+![AWS Marketplace - Datadog](graphics/AwsMarketplace.png) \
 
 
 # Re:Invent 2015
@@ -123,8 +133,22 @@ InstanceCount=2,InstanceType=m3.xlarge \
 * 2015: Over 20,000 attendees (TechRepublic)
 * Capital One and GE as part of key note
 
+# Re:Invent 2015: Internet of Things
+
+![AWS IoT Tutorial](graphics/ReInvent-IoT.png) \
+
+
+# Re:Invent 2015: QuickSight
+
+![AWS QuickSight](graphics/ReInvent-QuickSight.png) \
+
+
 # Links
 
-https://aws.amazon.com/architecture/icons/
+* https://aws.amazon.com/architecture/icons/
+
+# Picture References
+* https://aws.amazon.com/blogs/aws/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/
+
 
 # References {.allowframebreaks}

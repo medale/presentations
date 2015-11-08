@@ -12,7 +12,50 @@ Pricing:
 On Demand
 Reserved
 Spot Instances
+[Amazon EC2 history @clark_how_2012]
 
+# Amazon Web Services: AWS
+* Started in 2006
+    * Elastic Compute Cloud (EC2)
+    * Simple Storage Service (S3)
+    * [Amazon EC2 history @clark_how_2012]
+* By 2010: Amazon.com retail web services mostly moved to AWS
+* 2015: Over a Million Active Customers in 190 Countries
+    * e.g. Netflix, Dropbox, Airbnb, Supercell (Clash of Clans, Hay Day, Boom Beach)
+
+# Amazon Web Services (AWS) In the News
+
+Wired Magazine July 2015
+
+Amazon has figured out how to make cloud pay
+
+> $391 million profit based on $1.82 billion in revenue. That’s a
+> 407 percent increase in profit from the year before, and an
+> 81 percent bump in revenue.
+
+# Gartner: Infrastructure As A Service Magic Quadrant
+* X-axis: Completeness of vision
+* Y-axis: Ability to execute
+* Four quadrants: Niche players, visionaries, challengers, leaders
+
+# AWS Regions and Edge Points of Presence
+* 10 public, 2 US government regions
+     * AWS GovCloud
+* Each region: 3 or more Availability Zones (~ each AZ is 1 or more independent data centers)
+     * Connected with
+* Points of Presence - edge nodes for content delivery network (CloudFront - cache)
+* "Every day, AWS installs enough server infrastructure to host the entire
+   Amazon e-tailing business from back in 2004" [Rare Peek into Massive Scale of AWS @morgan_rare_2014]
+
+# Multiplayer Mobile Game Application
+* Start-up: Mobile device, backend server and database
+
+# Scaling Up - Getting Beefy
+* Scaling up/Scale vertically - bigger equipment (sell old?)
+* Must provision for peak demand?
+
+# Content Delivery Network & Analytics
+* User experience - forward deploy
 
 # Re:Invent 2015: Internet of Things
 
@@ -67,10 +110,10 @@ functions, stored procedures, warn about things that cannot be auto-converted
 * AWS Lambda
     * Python, Versioning, Scheduled Jobs, and 5 Minute Functions
 
+# References {.allowframebreaks}
 
-https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf
-http://en.clouddesignpattern.org/index.php/Main_Page
-
-http://blogs.aws.amazon.com/security/post/Tx2XKTVE4JWD0F9/New-Security-Services-Launched-at-AWS-re-Invent-2015-Amazon-Inspector-AWS-WAF-an
-
-https://aws.amazon.com/resources/gartner-2015-mq-learn-more/?trkCampaign=global_2015_ar_gartner_mq&trk=ha_ar_gartner_mq_1041
+# Links
+* https://d0.awsstatic.com/whitepapers/architecture/AWS_Well-Architected_Framework.pdf
+* http://en.clouddesignpattern.org/index.php/Main_Page
+* http://blogs.aws.amazon.com/security/post/Tx2XKTVE4JWD0F9/New-Security-Services-Launched-at-AWS-re-Invent-2015-Amazon-Inspector-AWS-WAF-an
+* https://aws.amazon.com/resources/gartner-2015-mq-learn-more/?trkCampaign=global_2015_ar_gartner_mq&trk=ha_ar_gartner_mq_1041

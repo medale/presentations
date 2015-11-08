@@ -1,10 +1,14 @@
-% Amazon Web Services, What's New & Java API
+% Amazon Web Services Intro, What's New & Java API
 % Markus Dale
 % November 2015
 
-# AWS
+# Amazon Web Services: AWS
 * Started in 2006
+    * Elastic Compute Cloud (EC2)
+    * Simple Storage Service (S3)
+* By 2010: Amazon.com retail web services mostly moved to AWS
 * 2015: Over a Million Active Customers in 190 Countries
+     * e.g. Netflix, Dropbox, Airbnb, Supercell
 
 # Amazon Web Services (AWS) In the News
 
@@ -25,7 +29,7 @@ Amazon has figured out how to make cloud pay
 
 # AWS Regions and Edge Points of Presence
 
-![11+1 @amazon_regions_global_2015](graphics/AwsRegions-2015-11-03.png)
+![10+2 @amazon_regions_global_2015](graphics/AwsRegions-2015-11-03.png)
 
 # Multiplayer Mobile Game Application
 
@@ -41,6 +45,13 @@ Amazon has figured out how to make cloud pay
 
 ![Content Delivery Network/Analytics](graphics/WebApp3-Content.png) \
 
+
+# Redundant Environments
+
+* Development
+* Testing
+* Production
+     * DevOps - Blue/Green Deployments?
 
 # Amazon Elastic Compute Cloud (EC2)
 
@@ -76,12 +87,11 @@ Amazon has figured out how to make cloud pay
 
 ![AWS Services](graphics/AwsServices-2015-11-03.png) \
 
+
 # EC2 Instances
 * On Demand
 * Reserved
 * Spot Instances
-
-# EC2 Instances - Reserved
 
 # Infrastructure As Code - RESTful via Management Console
 

@@ -1,3 +1,7 @@
+# Presentation Online
+* https://github.com/medale/presentations
+* Slides, notes and code sample with Maven
+
 # Intro
 * Markus - first used AWS for Data Science MOOC in 2013 (EMR)
 * Several AWS classes later...
@@ -79,7 +83,70 @@ Amazon has figured out how to make cloud pay
      * 11 9s of durability (99.999999999) - lose two facilities
      * 4 9s of availability (99.99) - 52.56 minutes per year
      * SSL and automatic encryption
-     * Storage classes: General Purpose, Infrequent Access, Glacier (hours to access)
+     * Storage classes: General Purpose, Infrequent Access (IA), Glacier (hours to access)
+
+# Amazon Scalable Analytics - Batch, Streaming, Datawarehouse
+* Elastic MapReduce (EMR) - Hadoop, Spark, Hive, Pig, Hue, Zeppelin against S3, RedShift...
+     * Priced by the hour! Linear scaling - double instances?
+* Kinesis Streaming - think managed Kafka? real-time analytics, scalable ETL
+* RedShift - Datawarehouse, columnar, fast, petabyte-scale (1000/TB/year)
+
+# Security At Every Layer
+* Identity & Access Management (IAM) - Amazon infrastructure/services
+* Users, groups, roles, rich policies/conditions
+* Virtual Private Cloud (VPC) - subnets w/ Network Access Control Lists, route
+tables, network gateways
+* EC2 - Security groups (like iptables firewall)
+* Web Application Firewall
+* CloudTrail - all AWS service access logged
+* CloudWatch - Monitor, alarm - e.g. auto-scaling up/down
+
+# Compute As A Service
+* Sys admin - hard, deploy web apps via Elastic Beanstalk
+* Short running code? React to environment/change/time - Lambda
+* Lambda: 1 to 5 minutes (Python, Java, Node.js/JavaScript)
+* Pricing: per 100 ms
+* API Gateway - invoke Lambda from web URL
+
+# 52 AWS Services
+* Simple Queuing Service, SNS
+* Simple Workflow Service (SWF)
+* CloudFormation
+
+# EC2 Instances
+* On Demand
+* Reserved 1-3 years, up to 75% off on demand
+* Reserved Instance Marketplace
+* Spot Instances - up to 90% on excess, may lose if demand goes up or outbid
+
+# Infrastructure As Code - RESTful via Management Console
+* All service endpoints are REST endpoints
+* GUI frontend to configure services
+
+# Infrastructure As Code - RESTful via AWS CLI
+* Command line interface with Python boto backend to REST endpoints
+* Script start up/shutdown, make repeatable, can version
+
+# Infrastructure As Code - RESTful via AWS SDKs
+* Software Dev Kits for many languages
+* Use in program to communicate with services securely
+* Tonight: AWS Java SDK
+
+# Infrastructure As Code - CloudFormation JSON
+* Export existing setup to different region
+* Version-controlled, auditable infrastructure (no router, hardware)
+
+# AWS Marketplace
+* Get instances with configured software
+* Try out, pay by the hour with option to rent for year
+* Preconfigured, installed, license (or bring your own)
+
+# Re:Invent 2015
+
+* 2013: 8,000
+* 2014: 13,000 attendees
+* 2015: Over 20,000 attendees (TechRepublic)
+* Capital One and GE as part of key note
 
 # Re:Invent 2015: Internet of Things
 
@@ -133,6 +200,28 @@ functions, stored procedures, warn about things that cannot be auto-converted
 * Amazon Cloudwatch Dashboards: reusable graphs of AWS CloudWatch and custom metrics
 * AWS Lambda
     * Python, Versioning, Scheduled Jobs, and 5 Minute Functions
+
+# AWS SDKs - Credentials for Java
+
+* Environment Variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+* Java System Properties: aws.accessKeyId, aws.secretKey
+* Default credentials: ~/.aws/credentials
+* Instance credentials (e.g. IAM role assigned to EC2 instance)
+
+# AWS Java SDK - Maven
+* All inclusive or service-by-service jar
+
+# AWS Java S3 SDK
+* ProfileCredProvider looks for ~/.aws/credentials
+* S3: Bucket, key, object
+* SLPRCELL bucket, key: damage, object: file (type=bullet
+  target=heart - calculate damage, kevlar vest etc.)
+* s3 client, PutObjectRequest
+* Server exception: Problem on the server, client: no network?
+
+# AWS S3 Management Console
+* view from management console: bucket, key (damage)
+
 
 # References {.allowframebreaks}
 

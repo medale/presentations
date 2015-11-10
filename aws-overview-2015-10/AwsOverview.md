@@ -2,6 +2,10 @@
 % Introduction, What's New & Java API
 % Markus Dale, November 2015
 
+# Presentation Online
+* https://github.com/medale/presentations
+* Slides, notes and code sample with Maven
+
 # Amazon Web Services: AWS
 * Started in 2006
     * Elastic Compute Cloud (EC2)
@@ -91,7 +95,7 @@ Amazon has figured out how to make cloud pay
 
 # EC2 Instances
 * On Demand
-* Reserved
+* Reserved: up to 75% cheaper, 1-3 year contracts
 * Spot Instances
 
 # Infrastructure As Code - RESTful via Management Console
@@ -186,7 +190,7 @@ InstanceCount=2,InstanceType=m3.xlarge \
 * AWS Lambda
     * Python, Versioning, Scheduled Jobs, and 5 Minute Functions
 
-# AWS SDKs - Credentials
+# AWS SDKs - Credentials for Java
 
 * Environment Variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 * Java System Properties: aws.accessKeyId, aws.secretKey

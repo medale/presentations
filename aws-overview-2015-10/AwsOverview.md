@@ -1,12 +1,12 @@
-% Amazon Web Services Intro, What's New & Java API
-% Markus Dale
-% November 2015
+% Amazon Web Services
+% Introduction, What's New & Java API
+% Markus Dale, November 2015
 
 # Amazon Web Services: AWS
 * Started in 2006
     * Elastic Compute Cloud (EC2)
     * Simple Storage Service (S3)
-* By 2010: Amazon.com retail web services mostly moved to AWS
+* By 2010: Amazon.com retail web services mostly on AWS
 * 2015: Over a Million Active Customers in 190 Countries
      * e.g. Netflix, Dropbox, Airbnb, Supercell
 
@@ -36,12 +36,12 @@ Amazon has figured out how to make cloud pay
 ![Mobile Game/Server/Database](graphics/WebApp1-Start.png) \
 
 
-# Scaling Up - Getting Beefy
+# Scaling Up/Vertical - Getting Beefy
 
 ![Scaling Up](graphics/WebApp2-ScaleUp.png) \
 
 
-# Content Delivery Network & Analytics
+# Scaling Out/Horizontal, Content Delivery Network & Analytics
 
 ![Content Delivery Network/Analytics](graphics/WebApp3-Content.png) \
 
@@ -52,6 +52,7 @@ Amazon has figured out how to make cloud pay
 * Testing
 * Production
      * DevOps - Blue/Green Deployments?
+     * Disaster Recovery
 
 # Amazon Elastic Compute Cloud (EC2)
 

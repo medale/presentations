@@ -2,18 +2,6 @@
 * Markus - first used AWS for Data Science MOOC in 2013 (EMR)
 * Several AWS classes later...
 
-Lambda
-Simian army
-Evolutionary architectures
-Operating expense instead of capital expense
-Scale horizontally
-
-Pricing:
-On Demand
-Reserved
-Spot Instances
-[Amazon EC2 history @clark_how_2012]
-
 # Amazon Web Services: AWS
 * Started in 2006
     * Elastic Compute Cloud (EC2)
@@ -37,25 +25,61 @@ Amazon has figured out how to make cloud pay
 * X-axis: Completeness of vision
 * Y-axis: Ability to execute
 * Four quadrants: Niche players, visionaries, challengers, leaders
+* Other providers: Rackspace, Google, Microsoft - trying to catch up
 
 # AWS Regions and Edge Points of Presence
 * 10 public, 2 US government regions
      * AWS GovCloud
 * Each region: 3 or more Availability Zones (~ each AZ is 1 or more independent data centers)
-     * Connected with
+     * AZs connected with private fiber in a 50m radius < 1ms latency
 * Points of Presence - edge nodes for content delivery network (CloudFront - cache)
-* "Every day, AWS installs enough server infrastructure to host the entire
-   Amazon e-tailing business from back in 2004" [Rare Peek into Massive Scale of AWS @morgan_rare_2014]
+* How much overall? "Every day, AWS installs enough server infrastructure to host the entire
+   Amazon e-tailing business from back in 2004" [700 million dollar revenue - Rare Peek into Massive Scale of AWS @morgan_rare_2014]
 
 # Multiplayer Mobile Game Application
 * Start-up: Mobile device, backend server and database
+* Show to investors, Minimum Viable Product
 
 # Scaling Up - Getting Beefy
-* Scaling up/Scale vertically - bigger equipment (sell old?)
-* Must provision for peak demand?
+* Scaling up/Scale vertically - bigger equipment (sell old or use for testing)
+* Must provision for peak demand? - must scale horizontally
 
-# Content Delivery Network & Analytics
-* User experience - forward deploy
+# Scaling Out/Horizontal, Content Delivery Network & Analytics
+* Scale horizontal, load balancer
+* Backend to NoSQL - better scaling and no fixed schema (evolutionary architecture)
+* User experience - forward deploy with CDN
+* Batch and realtime analytics, datawarehouse for business analysts
+
+# Redundant Environments
+* Development
+* Testing
+* Production
+     * DevOps - Blue/Green Deployments?
+     * Disaster recovery (somebody didn't call Miss Utility)
+
+# Amazon Elastic Compute Cloud (EC2)
+* Must provision for peak demand/Good Morning America
+* Instead of capital expense - operating expense
+* Multiple regions/Availability Zones (AZs)
+* EC2 - Elastic Compute Cloud
+     * Elastic Load Balancer service (no single point of failure)
+     * Auto-scaling group - up/down (pay only for what is used)
+* Route 53 - Blue/Green deployments (DNS server - also DR)
+
+# Amazon RDS, DynamoDB, ElastiCache
+* Administering database is hard - RDS (redundancy, backups, read replicas)
+* DynamoDB - NoSQL Key/Value store with attributes (provisioned service)
+* ElastiCache Service - Redis or Memcached (faster repsonse times)
+
+# Amazon CloudFront CDN, S3
+* CloudFront CDN - serve static content from Points of Presence - read S3, cache
+* Simple Storage Service - Scalable Key, object store 1 byte to 5TB per object
+     * Can use S3 as input to Elastic MapReduce Hadoop job!
+     * Buckets, store key/objects
+     * 11 9s of durability (99.999999999) - lose two facilities
+     * 4 9s of availability (99.99) - 52.56 minutes per year
+     * SSL and automatic encryption
+     * Storage classes: General Purpose, Infrequent Access, Glacier (hours to access)
 
 # Re:Invent 2015: Internet of Things
 

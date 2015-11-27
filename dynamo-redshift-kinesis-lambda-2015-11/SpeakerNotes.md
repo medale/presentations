@@ -78,4 +78,42 @@ Developer productivity - mission/business over infrastructure
 * Load/store in S3
 * DynamoDB
 * Elastic MapReduce
-* Kinesis
+* Kinesis Streams
+
+# AWS Kinesis Streams
+* Managed real-time data processing (~ Apache Kafka)
+* Stores data up to 7 days for each stream
+* Reliable, durable rolling buffer - replicates across 3 AZs
+* Can have multiple Kinesis applications process same stream
+     * Real-time application monitoring, logs
+     * Feed dashboards
+     * Alerts via SNS
+     * IoT
+
+# Kinesis Streams Scaling and Data Records
+* Add shards: 1 shard = 1 MB/second write, 2MB/second reads, 1000 puts/second
+* From MB to TB, 1000s to millions of PUT records per second
+* Sequence Number (assigned by Kinesis)
+* Partition Key (user assigned)
+* Data blob (after base64 encoding < 1MB)
+
+# AWS Lambda
+* Event-driven compute
+* Execute without provisioning/managing server
+* Managed execution and scaling
+* Python, Java, Node.js (JavaScript) - can call libraries, other languages
+
+# AWS Lambda Triggers Examples
+* DynamoDB Table Update
+* S3 Object modifications
+* Amazon CloudWatch log entry
+* Simple Email Service incoming email
+* Kinesis Streams message
+* Cron schedule
+
+# Lambda Execution
+* Stateless (store state in S3 or DynamoDB)
+* Charged by 100ms increments, number of requests, GB of RAM allocated
+* Default: 3sec execution limit (max 300sec)
+* Default: 100 simultaneous executions (can increase)
+* IAM policies/roles to manage permissions (Identification & Access Management)

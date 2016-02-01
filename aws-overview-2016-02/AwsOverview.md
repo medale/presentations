@@ -33,7 +33,7 @@ Amazon has figured out how to make cloud pay
 
 # AWS Regions and Edge Points of Presence
 
-![10+2 @amazon_regions_global_2015](graphics/AwsRegions-2016-02-01.png)
+![12+2 @amazon_regions_global_2016](graphics/AwsRegions-2016-02-01.png)
 
 # Multiplayer Mobile Game Application
 

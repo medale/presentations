@@ -1,0 +1,1 @@
+pandoc -t beamer --latex-engine=xelatex --no-tex-ligatures --biblio SparkPerformance.bib SparkPerformance.md -o SparkPerformance.pdf

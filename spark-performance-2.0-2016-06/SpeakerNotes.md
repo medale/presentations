@@ -1,6 +1,8 @@
 # What's in Apache Spark 2.0.0?
 
-* Dataset evolution: SparkSession (entry to Dataset/DataFrame - not SQLContext(sc))
+* Dataset evolution: 
+     * SparkSession (entry to Dataset/DataFrame - not SQLContext(sc))
+     * Unify DataFrame and Dataset API (DF is now DS\[Row\])
 * Off-heap caching: Overcome GC limits, compressed object pointers (compressed oops - up to 32GB Java heap - 32 bits/4 bytes, 64 bits/8 bytes if over)
 
 # Project Tungsten - Closer to bare metal
@@ -45,7 +47,7 @@
 # Handwritten vs. Volcano
 * handwritten - much faster, not composable
 
-# Whole Stage Code Generation Benefits
+# Whole-Stage Code Generation Benefits
 * No virtual function dispatches
      * multiple CPU instructions - slower (over big data)
 * Intermediate data in CPU registers
@@ -57,9 +59,20 @@
      * Single instruction, multiple data (SIMD) - process multiple rows at one time
 * Thomas Neumann’s VLDB 2011 paper “Efficiently Compiling Efficient Query Plans for Modern Hardware.”
 
-# Whole Stage Code Generation Example
+# Whole-Stage Code Generation Example
 * Have operators generate efficient code at runtime
 * Before: single expression only (e.g. a + 1), now whole query plan
 
+# See Whole-Stage Code Generation with explain()
+* spark - new SparkSession entry point
+* range(end) - 0 to end (exclusive) with id column
 
+# Vectorization
+* Use if unable to do whole-stage codegen
+     * Complex code
+     * Third party code
+     * infeasible to generate code to fuse the entire query into a single function
+* Each "next" call runs operator on batched column value
+* Still in memory not registers
+* New Vectorized Parquet reader
 

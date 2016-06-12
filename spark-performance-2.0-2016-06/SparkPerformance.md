@@ -1,7 +1,7 @@
 ---
 title: Performance Improvements in Apache Spark 2.0
-subtitle: Whole stage code generation and vectorization
-author: Markus Dale, Databricks
+subtitle: Whole-stage code generation and vectorization
+author: Markus Dale, Databricks (http://tinyurl.com/markus-spark-2-0)
 date: June 2016
 ---
 # What's in Apache Spark 2.0.0?
@@ -13,6 +13,7 @@ date: June 2016
      * [Add support for off-heap caching](https://issues.apache.org/jira/browse/SPARK-13992)
      * [Model export/import for Pipeline API](https://issues.apache.org/jira/browse/SPARK-6725)
      * [Whole stage codegen](https://issues.apache.org/jira/browse/SPARK-12795)
+     * [Vectorize parquet decoding using ColumnarBatch](https://issues.apache.org/jira/browse/SPARK-12992)
 
 # Project Tungsten - Closer to bare metal
 * Apache Spark 1.3 introduced DataFrames/Catalyst Optimizer
@@ -38,7 +39,7 @@ See Databricks Catalyst Optimizer blog entry, @armbrust_deep_2015
 
 # Simple aggregate query with filter
 
-![Filtered count query](images/FilteredCount.png)
+![](images/FilteredCount.png)
 
 # Pre-2.0 Apache Spark: Volcano Iterator Model
 
@@ -62,18 +63,20 @@ for (ss_item_sk in store_sales) {
 
 ![](images/HandcodedVsVolcano.png)
 
-# Whole Stage Code Generation Benefits
+# Whole-Stage Code Generation Benefits
 * No virtual function dispatches
 * Intermediate data in CPU registers
 * Loop unrolling and SIMD
 
-# Whole Stage Code Generation Example
+# Whole-Stage Code Generation Example
 
 ![](images/WholeStageCodeGeneration.png)
 
-# See Whole Stage Code Generation with explain()
+# See Whole-Stage Code Generation with explain()
 ```
-spark.range(1000).filter("id > 100").selectExpr("sum(id)").explain()
+spark.range(1000).
+   filter("id > 100").
+   selectExpr("sum(id)").explain()
 
 == Physical Plan ==
 *Aggregate(functions=[sum(id#201L)])
@@ -84,15 +87,18 @@ spark.range(1000).filter("id > 100").selectExpr("sum(id)").explain()
 ```
 
 # Vectorization
+* Use if unable to do whole-stage codegen
+* Each "next" call runs operator on batched column value
 
-
+![](images/Vectorization.png)
 
 # Demo
-
-org.apache.spark.sql.execution.vectorized.ColumnarBatch.Row
-
-spark.sql("select count(a) from df").explain()
-
-SparkSession SparkSession.builder.getOrCreate()
+* SparkSession
+* 1.6 vs. 2.0 TSV file
+* ETL to Parquet
+* 1.6 vs. 2.0 on Parquet file
+* See [http://tinyurl.com/markus-spark-2-0](http://tinyurl.com/markus-spark-2-0) and then src (or https://github.com/medale/presentations/tree/master/spark-performance-2.0-2016-06/src) for 
+notebooks
+* [https://databricks.com/try-databricks](https://databricks.com/try-databricks) - Databricks Community Edition
 
 # References {.allowframebreaks}

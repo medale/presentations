@@ -42,8 +42,18 @@ See Databricks Catalyst Optimizer blog entry, @armbrust_deep_2015
 ![](images/FilteredCount.png)
 
 # Pre-2.0 Apache Spark: Volcano Iterator Model
-
-![](images/VolcanoFilter.png)
+```scala
+class Filter(child: Operator, predicate: (Row => Boolean))
+  extends Operator {
+  def next(): Row = {
+    var current = child.next()
+    while (current != null && !predicate(current)) {
+      current = child.next()
+    }
+    return current
+  }
+}
+```
 
 See @graefe_volcano-extensible_1994
 

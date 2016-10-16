@@ -1,0 +1,2 @@
+DOC_NAME=ScalaEcosystem
+pandoc -t beamer --latex-engine=xelatex --no-tex-ligatures ${DOC_NAME}.md -o ${DOC_NAME}.pdf

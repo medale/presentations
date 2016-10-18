@@ -2,6 +2,21 @@
 % Leveraging functional, OO, libraries and frameworks
 % Markus Dale, 2016
 
+# The Scala Programming Language
+* Martin Odersky, EPFL, Switzerland
+     * Worked on javac (1.3)
+     * Java Generics
+* Lightbend (formerly Typesafe)
+* Multi-paradigm language
+     * Functional and Object-Oriented
+* Statically typed
+* Scalable language - script to large program
+* Stretch your mind - better programming
+
+#
+* Big industry projects
+
+
 # Scala to Java bytecode
 * Leverage Java Virtual Machine (JVM)
      * Over 20 years of optimizations
@@ -21,6 +36,19 @@
 
 # Exploration - Scala Shell
 
+# Scripting
+```
+#!/bin/bash
+exec scala "$0" "$@"
+!#
 
+println("Here is Scala")
+
+```
+
+```
+def factorial(x: BigInt): BigInt =     if (x == 0) 1 else x * factorial(x - 1)
+
+```
 # Resources
 * Coursera/EPFL [Functional Programming in Scala Specialization](https://www.coursera.org/specializations/scala)

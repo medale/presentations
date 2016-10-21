@@ -9,13 +9,18 @@
 * JIT
 * JVMs for most OS and Android Dalvik(old) now Android Runtime (ART)
 
-# Functional Programming
-* declarative: expressions - operators, functions, constants (focus on what)
-* imperative programming - statements that change program state (focus on how)
-* first class: no restrictions on their use, anywhere in program, highest level
-* can create and capture reference, pass around
-* higher-order functions - function can take function args or return functions
-* Pure functions - no side effects, eventually I/O is needed
+# Java Compatibility and extensions
+* Scala compiler can infer data types - static typing with less typing
+* Use underlying Java types (e.g. String)
+* Expand through use of implicits (converts String to StringOps - Predef.augmentString)
+* Predef - intArrayOps - ArrayOps[Int]
+
+# Conciseness
+* var/val, case class
+* No semi-colons
+* apply method
+* toString, equals, hashCode, copy
+* unapply method (Pattern matching)
 
 # Scala Shell
 ```
@@ -23,6 +28,7 @@
 
 import com.typesafe.config.ConfigFactory
 
+:paste
 val configStr = """{ s3 :
   |{ inputBucket : my-input-bucket,
     |  outputBucket : my-output-bucket
@@ -36,3 +42,15 @@ val inputBucket = if (config.hasPath("s3.inputBucket")) {
         "my-input-bucket-default"
 }
 ```
+
+# Functional Programming
+* declarative: expressions - operators, functions, constants (focus on what)
+* imperative programming - statements that change program state (focus on how)
+* first class: no restrictions on their use, anywhere in program, highest level
+* can create and capture reference, pass around
+* higher-order functions - function can take function args or return functions
+* Pure functions - no side effects, eventually I/O is needed
+
+
+# List
+l.permutations, partition, groupBy

@@ -11,10 +11,17 @@
      * Functional and Object-Oriented
 * Statically typed
 * Scalable language - script to large program
-* Stretch your mind - better programming
+* Stretch your mind - functions and immutability
 
-#
-* Big industry projects
+
+# Sca\(lable\) la\(nguage\)
+
+* Apache Spark (Databricks)
+* Apache Kafka (LinkedIn)
+* Akka (Lightbend)
+* Play Web Framework
+     * [Lichess Online Chess](https://en.lichess.org/)
+* Lightbend customers: Walmart, Verizon, Twitter, LinkedIn, Coursera, The Guardian, Airbnb...
 
 
 # Scala to Java bytecode
@@ -25,6 +32,65 @@
      * Ever-evolving garbage collectors
 * Full interoperability with Java and Java libraries
 
+# Exploration - Scala Shell and Worksheet
+* Scala shell
+* IDEA Scala Worksheet
+* Scala IDE
+
+# Whirlwind Tour
+* Java compatibility and extensions
+* Conciseness
+* Functional Programming
+
+# Java Compatibility and extensions
+```scala
+> val age = "42"
+age: String = 42
+> age.toInt
+res0: Int = 42
+
+> val myInts = Array(1,2,4,7)
+myInts: Array[Int] = Array(1, 2, 4, 7)
+> myInts.filter(_ % 2 == 0)
+res2: Array[Int] = Array(2, 4)
+```
+
+# Java <=> Scala
+```scala
+import scala.collection.JavaConverters._
+val utilList = new java.util.ArrayList[String]()
+utilList.add("hello")
+utilList.add("world")
+
+> val buffer = utilList.asScala
+buffer: scala.collection.mutable.Buffer[String] = Buffer(hello, world)
+> val list = buffer.toList
+list: List[String] = List(hello, world)
+
+val javaList = list.asJava
+javaList: java.util.List[String] = [hello, world]
+```
+
+# Conciseness
+```scala
+case class Person(firstName: String, lastName: String, age: Int)
+
+val bob = Person("Bob", "Dylan", 75)
+val bobby = Person("Bob", "Dylan", 75)
+
+println(bob)
+println(bob.age)
+val same = bob == bobby //eq
+bob.hashCode
+
+val youngBob = bob.copy(firstName = "Robert", age = 7)
+
+> val Person(first,last,age) = youngBob
+first: String = Robert
+last: String = Dylan
+age: Int = 7
+```
+
 # Functional Programming
 * Computation as mathematical functions
      * Function outcome depends only on arguments, idempotent invocations
@@ -34,10 +100,12 @@
 * Can have higher-order functions - take or return functions
 * Pure functions - no side effects
 
-# Exploration - Scala Shell
+# Functions are first class objects
+```scala
+```
 
 # Scripting
-```
+```bash
 #!/bin/bash
 exec scala "$0" "$@"
 !#

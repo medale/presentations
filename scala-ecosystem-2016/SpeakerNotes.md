@@ -5,15 +5,49 @@
 * Big data processing Hadoop since 2010, Spark since 2014
 * Teaching JHU grad comp sci, Hadoop for UMBC Training, Spark for Databricks
 
+# The Scala Programming Language
+* Odersky
+* Lightbend
+* Multi-paradigm
+* Statically typed
+* Scalable - small to large
+* Stretch your mind
+
+# Sca\(lable\) la\(nguage\)
+
+* Apache Spark (Databricks)
+* Apache Kafka (LinkedIn)
+* Akka (Lightbend)
+* Play Web Framework
+* [Lichess Online Chess](https://en.lichess.org/)
+* Lightbend customers: Walmart, Verizon, Twitter, LinkedIn, Coursera, The Guardian, Airbnb...
+
 # Scala to Java bytecode
 * JIT
-* JVMs for most OS and Android Dalvik(old) now Android Runtime (ART)
+* JVMs for most OSes and Android Dalvik(old) now Android Runtime (ART)
+     * Portability
+     * Security
+     * Garbage collectors
+* Full Java interop - leverage Java libraries
+
+# Exploration - Scala Shell and Worksheet
+* Scala shell
+* IDEA Scala Worksheet
+* Scala IDE
+
+# Whirlwind Tour
+* Java compatibility and extensions
+* Conciseness
+* Functional Programm
 
 # Java Compatibility and extensions
 * Scala compiler can infer data types - static typing with less typing
 * Use underlying Java types (e.g. String)
 * Expand through use of implicits (converts String to StringOps - Predef.augmentString)
 * Predef - intArrayOps - ArrayOps[Int]
+
+# Java <=> Scala
+* Easily convert back and forth to leverage libraries
 
 # Conciseness
 * var/val, case class
@@ -51,6 +85,13 @@ val inputBucket = if (config.hasPath("s3.inputBucket")) {
 * higher-order functions - function can take function args or return functions
 * Pure functions - no side effects, eventually I/O is needed
 
-
 # List
 l.permutations, partition, groupBy
+scala.io.StdIn.readLine
+functional (immutable) data structures - no defensive copies
+lazy evaluation
+
+import sys.process._ - !
+import java.util.{HashMap => JavaMap}
+
+scala.sys.props env

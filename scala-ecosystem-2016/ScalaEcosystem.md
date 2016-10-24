@@ -101,8 +101,9 @@ age: Int = 7
 * Pure functions - no side effects
 
 # Functions are first class objects
-```scala
-```
+* L01 examples
+* Function literals
+* Higher-order functions - take function as argument or return a function
 
 # Scripting
 ```bash

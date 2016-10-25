@@ -95,3 +95,25 @@ import sys.process._ - !
 import java.util.{HashMap => JavaMap}
 
 scala.sys.props env
+
+Tour
+* Scala Shells by the sea shore
+* semicolons optional
+* type after variable name (inference)
+* no return - everything's a statement
+* all objects - equality ==
+* val/var
+* multiline strings with string interpolation (s,f,r)
+* first-class functions
+* collections, range
+* case classes
+* functional pattern matching
+* options
+* regular expressions
+* scripting - process, sys
+* mixin traits
+* Java interop
+* Implicits
+* collections to Spark
+* actor concurrency with Akka
+* Scala.js

@@ -20,5 +20,8 @@ s1Opt.map { s1 =>
 	val client = makeConnection(s1)
 }
 
+//default value
+val connectionUrl = s0Opt.getOrElse(throw new RuntimeException("Must define connection URL!"))
+
 
 

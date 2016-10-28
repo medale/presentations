@@ -2,6 +2,12 @@
 % Leveraging functional, OO, libraries and frameworks
 % Markus Dale, 2016
 
+# Scala - The Bad and Ugly
+![](graphics/garbage-can-1260832_1280.jpg)
+
+# Scala - The Good
+![](graphics/dom-1707634_960_720.jpg)
+
 # The Scala Programming Language
 * Martin Odersky, EPFL, Switzerland
      * Worked on javac (1.3)
@@ -18,6 +24,7 @@
 
 * Apache Spark (Databricks)
 * Apache Kafka (LinkedIn)
+* Finagle (Twitter)
 * Akka (Lightbend)
 * Play Web Framework
      * [Lichess Online Chess](https://en.lichess.org/)
@@ -33,9 +40,7 @@
 * Full interoperability with Java and Java libraries
 
 # Exploration - Scala Shell and Worksheet
-* Scala shell
-* IDEA Scala Worksheet
-* Scala IDE
+![](graphics/snail-160313_960_720.png)
 
 # Whirlwind Tour
 * Java compatibility and extensions
@@ -63,7 +68,8 @@ utilList.add("hello")
 utilList.add("world")
 
 > val buffer = utilList.asScala
-buffer: scala.collection.mutable.Buffer[String] = Buffer(hello, world)
+buffer: scala.collection.mutable.Buffer[String] =
+   Buffer(hello, world)
 > val list = buffer.toList
 list: List[String] = List(hello, world)
 
@@ -73,7 +79,8 @@ javaList: java.util.List[String] = [hello, world]
 
 # Conciseness
 ```scala
-case class Person(firstName: String, lastName: String, age: Int)
+case class Person(firstName: String,
+   lastName: String, age: Int)
 
 val bob = Person("Bob", "Dylan", 75)
 val bobby = Person("Bob", "Dylan", 75)
@@ -83,7 +90,8 @@ println(bob.age)
 val same = bob == bobby //eq
 bob.hashCode
 
-val youngBob = bob.copy(firstName = "Robert", age = 7)
+val youngBob =
+  bob.copy(firstName = "Robert", age = 7)
 
 > val Person(first,last,age) = youngBob
 first: String = Robert
@@ -121,3 +129,4 @@ def factorial(x: BigInt): BigInt =     if (x == 0) 1 else x * fac
 ```
 # Resources
 * Coursera/EPFL [Functional Programming in Scala Specialization](https://www.coursera.org/specializations/scala)
+* [Twitter Scala School](http://twitter.github.io/scala_school/)

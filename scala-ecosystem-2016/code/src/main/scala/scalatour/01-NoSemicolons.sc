@@ -1,0 +1,1 @@
+val helloWorld = "Hello, Scala World!"

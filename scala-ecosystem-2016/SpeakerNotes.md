@@ -100,12 +100,12 @@ Tour
 * Scala Shells by the sea shore
 * semicolons optional
 * type after variable name (inference)
+* val/var
+* first-class functions
 * no return - everything's a statement
 * all objects - equality ==
-* val/var
-* multiline strings with string interpolation (s,f,r)
-* first-class functions
 * collections, range
+* multiline strings with string interpolation (s,f,r)
 * case classes
 * functional pattern matching
 * options

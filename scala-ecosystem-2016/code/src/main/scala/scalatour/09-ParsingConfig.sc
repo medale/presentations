@@ -25,4 +25,4 @@ val portOpt = getPortOpt(configStr)
 
 val badConfig = """foo=bar"""
 
-val noPort = getPortOpt(badConfig)
+val noPortOpt = getPortOpt(badConfig)

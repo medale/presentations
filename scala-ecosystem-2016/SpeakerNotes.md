@@ -106,10 +106,10 @@ Tour
 * all objects - equality ==
 * collections, range
 * multiline strings with string interpolation (s,f,r)
-* case classes
 * functional pattern matching
 * options
 * regular expressions
+* case classes
 * scripting - process, sys
 * mixin traits
 * Java interop

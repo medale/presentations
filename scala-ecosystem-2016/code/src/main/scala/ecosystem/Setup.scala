@@ -12,17 +12,22 @@ import scala.sys.props
 object Setup {
 
 	def main(args: Array[String]): Unit = {
-		val dictIn = getClass.getResourceAsStream("/dictionary/american-english")
 		val homeDir = props("user.home")
-		val outputFile = new File(homeDir, "american-english")
-		val dictOut = new FileOutputStream(outputFile)
-		try {
-			IOUtils.copy(dictIn, dictOut)
-		} catch {
-			case e: Exception => println(s"Unable to copy to ${outputFile} due to ${e}")
-		} finally {
-			dictIn.close()
-			dictOut.close()
+		val resources = List("/dictionary/american-english", "/scripts/tokenGenerator")
+		resources.foreach { resource =>
+			val in = getClass.getResourceAsStream(resource)
+			val lastSlashIndex = resource.lastIndexOf("/")
+			val fileName = resource.substring(lastSlashIndex + 1)
+			val outputFile = new File(homeDir, fileName)
+			val out = new FileOutputStream(outputFile)
+			try {
+				IOUtils.copy(in, out)
+			} catch {
+				case e: Exception => println(s"Unable to copy to ${outputFile} due to ${e}")
+			} finally {
+				in.close()
+				out.close()
+			}
 		}
 	}
 }

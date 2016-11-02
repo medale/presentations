@@ -6,7 +6,7 @@ val helloWorld2: String = s"${helloWorld} explict type"
 //helloWorld2 = "this is a different string"
 
 val hello = "Hello"
-val names = List("Markus", "Joe")
+val names = List("Markus", "Joe", "Jane")
 
 //vars are mutable
 var allHellos = ""
@@ -14,3 +14,6 @@ var allHellos = ""
 names.foreach(name => allHellos += s"${hello}, ${name}! ")
 
 println(allHellos)
+
+//or
+names.mkString("Hello ", " and ", "!")

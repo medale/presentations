@@ -109,9 +109,9 @@ Tour
 * functional pattern matching
 * options
 * regular expressions
+* mixin traits
 * case classes
 * scripting - process, sys
-* mixin traits
 * Java interop
 * Implicits
 * collections to Spark

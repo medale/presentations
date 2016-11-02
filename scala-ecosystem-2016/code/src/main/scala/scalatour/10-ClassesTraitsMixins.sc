@@ -28,7 +28,10 @@ val e2 = new Employee("Austin Martin", uuid)
 
 e2.id == uuid
 
+val e3 = new Employee("Austin Martin", uuid)
 
+//by default - Object.equals
+val areTheyEqual = e2 == e3
 
 trait AwakenessReservoir {
 	var minutesToDozingOff: Int = 0
